@@ -1,16 +1,22 @@
 {
   "development": {
-    "database": "express_auth_development",
+    "username": "postgres",
+    "password": "winsome1",
+    "database": "authentication_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "express_auth_test",
+    "username": "postgres",
+    "password": "winsome1",
+    "database": "authentication_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "express_auth_production",
+    "username": "postgres",
+    "password": "winsome1",
+    "database": "authentication_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
