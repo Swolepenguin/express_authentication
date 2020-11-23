@@ -20,3 +20,23 @@ passport.deserializeUser((id, cb)=>{
 .catch(err =>{
     console.log(err);
 })
+
+
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password'
+}, (email, password, cb) => {
+    db.user.findOne({
+        where: { email }
+    })
+    .then(user => {
+        if (!user || !user.validPassword(password)) {
+            cb(null, false);
+        } else {
+            cb(null, user);
+        }
+    })
+    .catch(cb);
+}));
+
+module.exports = passport; 
